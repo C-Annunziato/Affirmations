@@ -23,11 +23,11 @@ class ItemAdapter(
         val imageView: ImageView = view.findViewById(R.id.item_image)
 
     }
-    //infalte a new layout from XML for every single item in grid
+    //inflate a new layout from XML for every single item in grid
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-    //Activity context is being passed to layoutinfalter
+    //Activity context is being passed to layout inflater
         val adapterLayout = LayoutInflater.from(parent.context)
-    //dont attach child view "list_item" to parent "ViewGroup" right now add it later
+    //don't attach child view "list_item" to parent "ViewGroup" right now add it later
             .inflate(R.layout.list_item, parent, false)
     //return a new holder instance
         return ItemViewHolder(adapterLayout)
@@ -38,7 +38,6 @@ class ItemAdapter(
         val item = dataset[position]
         holder.textView.text = context.resources.getString(item.stringResourceId)
         holder.imageView.setImageResource(item.imageResourceId)
-
 
     }
     override fun getItemCount(): Int = dataset.size
